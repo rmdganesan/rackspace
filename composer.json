@@ -1,0 +1,27 @@
+{
+    "name": "ganesan/rackspace",
+    "description": "rackspace Demo Project",
+    "type": "project",
+    "license": "N/A",
+    "authors": [{
+        "name": "Ganesan Murugesan",
+        "email": "rmdganesan@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.3",
+        "phpunit/php-timer": "5.0.x-dev",
+        "mbarwick83/shorty": "dev-master",
+        "byjg/migration": "dev-master",
+        "mremi/url-shortener": "2.3.x-dev",
+        "robmorgan/phinx": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        },
+        "classname": {
+            "PHP_Timer": "src/"
+        }
+    }
+}
