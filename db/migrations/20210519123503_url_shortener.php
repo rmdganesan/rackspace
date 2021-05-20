@@ -19,10 +19,9 @@ final class UrlShortener extends AbstractMigration
     public function change()
     {
         $shortener = $this->table('url_shortener');
-        $shortener->addColumn('url', 'string', ['limit' => 25])
+        $shortener->addColumn('url', 'string', ['limit' => 255])
               ->addColumn('shortener', 'string', ['limit' => 25])
-              ->addColumn('created', 'datetime')
-              ->addColumn('updated', 'datetime', ['null' => true])
+              ->addColumn('created', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
               ->addIndex(['url', 'shortener'], ['unique' => true])
               ->create();
 

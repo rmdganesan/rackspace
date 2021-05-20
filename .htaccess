@@ -1,0 +1,4 @@
+RewriteEngine On
+<If "%{HTTP_HOST} == 'rs.io'">
+ RedirectMatch ^/(.*)$ http://rackspace.example.com/from-submit.php?data=$1
+</If>

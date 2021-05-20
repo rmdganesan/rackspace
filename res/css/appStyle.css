@@ -140,7 +140,8 @@ a {
 
 .btn-blue:hover {
     background-color: #000;
-    cursor: pointer
+    cursor: pointer;
+    color: #fff;
 }
 
 .bg-blue {

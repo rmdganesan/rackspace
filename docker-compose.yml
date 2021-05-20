@@ -33,16 +33,20 @@ services:
     networks:
       - backend
   phpmyadmin:
-    # https://hub.docker.com/r/phpmyadmin/phpmyadmin/
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
-    ports:
-    - "8080:80"
     environment:
-        MYSQL_USERNAME: ${MYSQL_ROOT_USER}
-        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_ROOT_USER}
+      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8080:80"
+    links:
+      - mysql
     networks:
-        - backend
+      - backend
   php:
     container_name: php
     build:

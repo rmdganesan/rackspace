@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => 'adc5ba419d55a7fd4e338f5c8d45ef61d714aa99',
+    'reference' => 'a9a8fd6b80e3c954c9a500649c1136c61c2115d9',
     'name' => 'ganesan/rackspace',
   ),
   'versions' => 
@@ -146,12 +146,12 @@ private static $installed = array (
     ),
     'ganesan/rackspace' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => 'adc5ba419d55a7fd4e338f5c8d45ef61d714aa99',
+      'reference' => 'a9a8fd6b80e3c954c9a500649c1136c61c2115d9',
     ),
     'guzzlehttp/guzzle' => 
     array (

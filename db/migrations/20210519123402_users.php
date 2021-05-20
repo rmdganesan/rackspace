@@ -21,12 +21,13 @@ final class Users extends AbstractMigration
         $users = $this->table('users');
         $users->addColumn('username', 'string', ['limit' => 100])
               ->addColumn('password', 'string', ['limit' => 255])
-              ->addColumn('password_salt', 'string', ['limit' => 40])
+              ->addColumn('password_salt', 'enum', ['default' => 'password_hash,PASSWORD_DEFAULT', 'values' => ['md5', 'password_hash,PASSWORD_DEFAULT', 'password_hash,PASSWORD_BCRYPT']])
               ->addColumn('email', 'string', ['limit' => 100])
               ->addColumn('first_name', 'string', ['limit' => 30])
               ->addColumn('last_name', 'string', ['limit' => 30])
+              ->addColumn('status', 'enum', ['default' => 'enabled', 'values' => ['enabled', 'disabled']])
               ->addColumn('created', 'datetime')
-              ->addColumn('updated', 'datetime', ['null' => true])
+              ->addColumn('updated', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
               ->addIndex(['username', 'email'], ['unique' => true])
               ->create();
     }
