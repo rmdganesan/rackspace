@@ -1,12 +1,17 @@
 **Required Software:**
+
 	Docker Desktop – for up and run the docker container in Windows
 
 
 **project folder structure:**
-Root folder: D:\work\rackspace  (based on my development)
+
+	Root folder: D:\work\rackspace  (based on my development)
+	
 D:\work\rackspace:
+
 	**App** 
-		application related PHP source 
+		application related PHP source
+		
 	**docker-files**
 		(PHP Docker- PHP\Dockerfile, Apache Docker- Apache\Dockerfile , Apache config file - Apache\apache-conf\*, Apache https SSL certificate - Apache\apache-conf\ssl)
 	**db\migrations**
@@ -35,25 +40,30 @@ D:\work\rackspace:
 		
 	**index.php** 
 		application bootstrap 
-	
-	
-**List of External Modules used in this project: **
+		
+**List of External Modules used in this project:**
 
 	Composer require robmorgan/phinx - Simple PHP Database Migrations
 	Composer required phpunit/php-timer – PHPuntil framework 
 
 All the modules already included in the composer.json 
 
-**Download and Install external library using composer:** 
+**Download and Install external library using composer:**
+
  Composer install 
 
-Apache https SSL certificate: 
+**Apache https SSL certificate: **
+
 docker run --rm -v D:\work\rackspace\docker-files\Apache\apache-conf\ssl:/certificates -e "SERVER=server.example.com" jacoelho/generate-certificate
 ** Not a mandatory, if you need to run the app https then only required 
-**Composer UP CMD:**
+
+**Composer UP CMD**
+
 	Cd D:\work\rackspace
 	docker-compose up 
+	
 **document .env file**
+
 	--Apache VHSOT--
 	APACHE_HOST=rackspace.example.com
 
@@ -71,17 +81,21 @@ docker run --rm -v D:\work\rackspace\docker-files\Apache\apache-conf\ssl:/certif
 	REDIS_PASSWORD=rackspace
 
 **migrations migrations:**
+
 	cd D:\work\rackspace
 	 ./vendor/bin/phinx  migrate #improt all date in to database 
 	./vendor/bin/phinx  rollback #rollback all the change 
+	
 **Add hosts file entry (C:\Windows\System32\drivers\etc\hosts): **
-127.0.0.1 rackspace.example.com
-127.0.0.1 rs.io
+
+		127.0.0.1 rackspace.example.com
+		127.0.0.1 rs.io
 
 **Check the URL is working in the host machine browser:**
-https://rackspace.example.com – open the home page 
-http://rackspace.example.com:8080 – phpMyAdmin
-http://rs.io – local shorty server and  it’s just alias for webserver 
+
+	https://rackspace.example.com – open the home page 
+	http://rackspace.example.com:8080 – phpMyAdmin
+	http://rs.io – local shorty server and  it’s just alias for webserver 
  
 
 
