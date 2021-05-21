@@ -10,8 +10,9 @@ class User
     public function logincheck($userName, $password) {
         $status = false;
         $message = null;
-        $data = $this->db->query('SELECT * FROM `users` WHERE username = '."'".$userName."'");
-        
+        $objRedisServer= new RedisServer('redis', '6379','rackspace');
+        $objRedisServer->loadUsersData($this->db);
+        $data = $objRedisServer->getValueFromKey($userName);
         if(empty( $data)) {
             $message = 'incorrect email or username';
         }elseif(!empty( $data) && $data['status'] !== 'enabled'){

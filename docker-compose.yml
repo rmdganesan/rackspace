@@ -67,6 +67,13 @@ services:
     image: 'redis:5.0.7-alpine'
     ports:
       - 6379:6379
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./redis-data:/data:delegated
+    command: redis-server --appendonly yes
     networks:
       - backend
 networks:
