@@ -5,17 +5,36 @@
 **project folder structure:**
 Root folder: D:\work\rackspace  (based on my development)
 D:\work\rackspace:
-	**App** – application related PHP source 
-	**docker-files** (PHP Docker- PHP\Dockerfile, Apache Docker- Apache\Dockerfile , Apache config file - Apache\apache-conf\*, Apache https SSL certificate - Apache\apache-conf\ssl)
-	**db\migrations** – need to keep migrations script 
-	**res** – static resource (css, js, img)
-	**tests** – Test script 
-	**vendor****** – external library 
-	**.env** – docker environment values and config details 
-	**Composer** – required php external library details 
-	**docker-compose.yml** – docker compose file
-	**redis-data** – Redis data 
-	**index.php** - application bootstrap 
+	**App** 
+		application related PHP source 
+	**docker-files**
+		(PHP Docker- PHP\Dockerfile, Apache Docker- Apache\Dockerfile , Apache config file - Apache\apache-conf\*, Apache https SSL certificate - Apache\apache-conf\ssl)
+	**db\migrations**
+		need to keep migrations script 
+		
+	**res** 
+		static resource (css, js, img)
+		
+	**tests** 
+		Test script 
+		
+	**vendor****** 
+		external library 
+		
+	**.env** 
+		docker environment values and config details 
+		
+	**Composer** 
+		required php external library details 
+		
+	**docker-compose.yml** 
+		docker compose file
+		
+	**redis-data** 
+		Redis data 
+		
+	**index.php** 
+		application bootstrap 
 	
 	
 **List of External Modules used in this project: **
